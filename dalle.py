@@ -2,7 +2,7 @@ import requests
 import json
 
 # Замените YOUR_API_KEY на свой реальный API ключ
-api_key = "YOUR_API_KEY"
+api_key = "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"
 
 # Задайте запрос для DALL·E
 prompt = "Generate a picture of a cat wearing a hat"
