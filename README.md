@@ -1,4 +1,7 @@
-# legendary-computing-machine
+
+[![Build and push Docker image](https://github.com/openthisworld/legendary-computing-machine/actions/workflows/docker_hub.yml/badge.svg)](https://github.com/openthisworld/legendary-computing-machine/actions/workflows/docker_hub.yml)
+
+legendary-computing-machine
 OpenAI ChatGPT in docker container
 
 #ENG VERSION
