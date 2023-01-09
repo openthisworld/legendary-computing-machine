@@ -15,7 +15,7 @@ To work with the container, you need to install Docker. Installation instruction
 
 Building the container
 
-Download the Dockerfile and image_generator.py file to the same directory.
+Download the Dockerfile and generate_image.py file to the same directory.
 Open a terminal and navigate to this directory.
 Build the container with the following command:
 
@@ -51,7 +51,7 @@ After running the container, a file named image.jpg containing the generated ima
 
 Сборка контейнера
 
-Скачайте файл Dockerfile и файл image_generator.py в одну директорию.
+Скачайте файл Dockerfile и файл generate_image.py в одну директорию.
 Откройте терминал и перейдите в эту директорию.
 Соберите контейнер с помощью команды:
 
