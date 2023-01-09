@@ -7,4 +7,4 @@ COPY generate_image.py .
 
 ENV OPENAI_API_KEY "${{ secrets.API_KEY }}"
 
-CMD ["python", "image_generator.py", "--prompt", "$PROMPT"]
+CMD ["python", "generate_image.py", "--prompt", "$PROMPT"]
