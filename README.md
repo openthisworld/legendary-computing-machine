@@ -70,3 +70,5 @@ docker run -e PROMPT="<текст_приглашения>" -e API_KEY="<ключ
 docker run -e PROMPT="Hello, World!" -e API_KEY="your_api_key" -v /home/user/images:/app image_generator
 
 После запуска контейнера в директории /home/user/images будет сохранен файл с именем image.jpg, содержащий сгенерированное изображение.
+
+Genered with ChatGPT :)
