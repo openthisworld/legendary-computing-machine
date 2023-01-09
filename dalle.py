@@ -2,7 +2,7 @@ import requests
 import json
 import base64
 
-openai_api_key = "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"
+openai_api_key = "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"
 
 def generate_image(prompt):
     model_engine = "image-alpha-001"
