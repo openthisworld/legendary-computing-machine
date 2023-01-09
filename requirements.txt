@@ -1,4 +1,4 @@
-requests>
-json>
-base64>
-openai>
+requests
+json
+base64
+openai
