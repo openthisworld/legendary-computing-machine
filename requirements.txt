@@ -1,4 +1,4 @@
-requests
-json
-base64
-openai
+requests==2.28.1
+json==3.7.3
+base64==1.0.0
+openai==1.0.0
