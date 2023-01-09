@@ -5,7 +5,7 @@ import base64
 
 
 openai_api_key = "${{ secrets.API_KEY }}"
-#openai_api_key = "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"
+
 
 def generate_image(prompt):
     model_engine = "image-alpha-001"
