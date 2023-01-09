@@ -10,9 +10,11 @@ OpenAI DALL-E-2 in docker container
 Instructions for using the container with image_generator.py
 
 Required software
+
 To work with the container, you need to install Docker. Installation instructions can be found on the Docker website.
 
 Building the container
+
 Download the Dockerfile and image_generator.py file to the same directory.
 Open a terminal and navigate to this directory.
 Build the container with the following command:
@@ -20,6 +22,7 @@ Build the container with the following command:
 docker build -t <container_name> .
 
 Running the container
+
 To run the container, use the following command:
 
 docker run -e PROMPT="<prompt_text>" -e API_KEY="<api_key>" -v <path_to_directory_on_host_machine>:/app <container_name>
@@ -43,6 +46,7 @@ After running the container, a file named image.jpg containing the generated ima
 
 Инструкция по использованию контейнера с image_generator.py
 Необходимое ПО
+
 Для работы с контейнером необходимо установить Docker. Инструкции по установке можно найти на сайте Docker.
 
 Сборка контейнера
