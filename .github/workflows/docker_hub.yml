@@ -1,20 +1,20 @@
 name: Build and push Docker image
 
 on:
-push:
-branches: [ master ]
+  push:
+    branches: [ master ]
 
 jobs:
-build-and-push:
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v2
-- name: Build and push Docker image
-run: |
- docker build -t legendary-computing-machine .
- docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
- docker tag legendary-computing-machine "$DOCKER_USERNAME"/legendary-computing-machine:latest
- docker push "$DOCKER_USERNAME"/legendary-computing-machine:latest
-env:
-DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and push Docker image
+        run: |
+          docker build -t legendary-computing-machine .
+          docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+          docker tag legendary-computing-machine "$DOCKER_USERNAME"/legendary-computing-machine:latest
+          docker push "$DOCKER_USERNAME"/legendary-computing-machine:latest
+    env:
+     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+     DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
