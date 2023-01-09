@@ -1,34 +1,52 @@
 import requests
 import json
+import base64
 
-# Замените YOUR_API_KEY на свой реальный API ключ
-api_key = "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"
+openai_api_key = "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"
 
-# Задайте запрос для DALL·E
-prompt = "Generate a picture of a cat wearing a hat"
+def generate_image(prompt):
+    model_engine = "image-alpha-001"
+    prompt = (f"{prompt}")
 
-# Отправьте запрос к DALL·E
-response = requests.post(
-    "https://api.openai.com/v1/images/generations",
-    headers={
+    headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
-    },
-    json={
-        "prompt": prompt
+        "Authorization": f"Bearer {openai_api_key}"
     }
-)
 
-# Парсим ответ от DALL·E
-response_json = response.json()
+    data = """
+    {
+        """
+    data += f'"model": "{model_engine}",'
+    data += f'"prompt": "{prompt}",'
+    data += """
+        "num_images":1,
+        "size":"256x256",
+        "response_format":"url"
+    }
+    """
 
-# Получаем URL изображения
-image_url = response_json["data"][0]["url"]
+    api_url = "https://api.openai.com/v1/images/generations"
 
-# Скачиваем изображение по URL
-response = requests.get(image_url)
+    response = requests.post(api_url, headers=headers, data=data)
 
-# Сохраняем изображение в текущую директорию
-open("image.jpg", "wb").write(response.content)
+    if response.status_code == 200:
+        response_text = json.loads(response.text)
+        return response_text['data'][0]['url']
+    else:
+        return None
 
-print("Изображение сохранено в текущей директории")
+def save_image(url, file_name):
+    response = requests.get(url)
+    image_data = response.content
+
+    with open(file_name, "wb") as f:
+        f.write(image_data)
+
+prompt = input("Enter a prompt: ")
+image_url = generate_image(prompt)
+
+if image_url is not None:
+    save_image(image_url, "image.jpg")
+    print("Image saved successfully!")
+else:
+    print("Error generating image")
